@@ -2,10 +2,16 @@ package com.pablosj.inventariolicor.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+//LightColorPalette
+val Amber = Color(0xFFFAAF18)
+val Indigo900 = Color(0xFF011A37)
+val Blue = Color(0xFF185494)
+val Indigo50 = Color(0xFFF0F4FA)
 
-val white = Color(0xFFFFFFFF)
-val grey = Color(0xFF3333333)
+val Red800 = Color(0xFFCF0030)
+val Green700 = Color(0xFF00C437)
+val White = Color(0xFFFFFFFF)
+
+//DarkColorPalette
+val DarkGrey = Color(0xFF2E2F2F)
+val Grey = Color(0xFF868687)

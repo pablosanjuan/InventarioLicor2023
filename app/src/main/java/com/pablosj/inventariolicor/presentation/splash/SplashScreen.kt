@@ -4,8 +4,9 @@ import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.FloatTweenSpec
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -18,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.pablosj.inventariolicor.R
 import com.pablosj.inventariolicor.presentation.navigation.Screen
-import com.pablosj.inventariolicor.presentation.ui.theme.white
 import kotlinx.coroutines.delay
 
 @Composable
@@ -27,14 +27,14 @@ fun SplashScreen(navController: NavController) {
     val alphaAnim = animateFloatAsState(
         targetValue = if (startAnimation) 1f else 0f,
         animationSpec = FloatTweenSpec(
-             3000, 0, FastOutLinearInEasing
+            1000, 0, FastOutLinearInEasing
 
         )
     )
 
     LaunchedEffect(key1 = true) {
         startAnimation = true
-        delay(3000)
+        delay(4000)
         navController.popBackStack()
         navController.navigate(Screen.Home.route)
     }
@@ -43,11 +43,13 @@ fun SplashScreen(navController: NavController) {
 
 @Composable
 fun Splash(alpha: Float) {
-    Box(
+    Column(
         modifier = Modifier
-            .background(white)
+            .background(MaterialTheme.colors.surface)
             .fillMaxSize(),
-        contentAlignment = Alignment.Center
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+
     ) {
         LottieAnimation(R.raw.lottie_splas_animation, 400.dp, alpha)
     }

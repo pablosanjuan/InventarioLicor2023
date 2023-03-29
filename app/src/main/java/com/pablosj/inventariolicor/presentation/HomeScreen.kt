@@ -17,6 +17,9 @@ fun HomeScreen() {
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = "hola mundo")
+        Text(
+            text = "hola mundo",
+            color = MaterialTheme.colors.onSurface
+        )
     }
 }
