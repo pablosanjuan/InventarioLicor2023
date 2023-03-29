@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1076123597451",
+    "project_id": "inventario-licor-2023",
+    "storage_bucket": "inventario-licor-2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076123597451:android:dc8428989dd336d694728e",
+        "android_client_info": {
+          "package_name": "com.pablosj.inventariolicor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076123597451-61hn3c0gvr6uhq1dr27esu44ik2hc5es.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9oleUz0gZNwk-D0RL5y0Y2RlhhqlD_uQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076123597451-61hn3c0gvr6uhq1dr27esu44ik2hc5es.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
