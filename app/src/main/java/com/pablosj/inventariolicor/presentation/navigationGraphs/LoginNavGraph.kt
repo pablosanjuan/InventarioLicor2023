@@ -2,6 +2,7 @@ package com.pablosj.inventariolicor.presentation.navigationGraphs
 
 import android.app.Activity
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
@@ -28,7 +29,11 @@ fun LoginNavGraph(navController: NavHostController) {
         composable(route = Screen.ToHomeActivity.route) {
             val context = LocalContext.current
             (context as Activity).apply {
-                startActivity(Intent(context, MainActivity::class.java))
+                startActivity(
+                    Intent(context, MainActivity::class.java).addFlags(
+                        FLAG_ACTIVITY_SINGLE_TOP,
+                    ),
+                )
                 finish()
             }
         }
