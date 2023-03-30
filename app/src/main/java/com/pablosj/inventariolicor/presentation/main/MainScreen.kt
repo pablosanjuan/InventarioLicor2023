@@ -33,7 +33,9 @@ fun BottomBar(navController: NavHostController) {
 
     val bottomBarDestination = screens.any { it.route == currentDestination?.route }
     if (bottomBarDestination) {
-        BottomNavigation {
+        BottomNavigation (
+            backgroundColor = MaterialTheme.colors.primaryVariant,
+                ) {
             screens.forEach { screen ->
                 AddItem(
                     screen = screen,
@@ -53,17 +55,20 @@ fun RowScope.AddItem(
 ) {
     BottomNavigationItem(
         label = {
-            Text(text = screen.title)
+            Text(
+                text = screen.title,
+            )
         },
         icon = {
             Icon(
                 imageVector = screen.icon,
-                contentDescription = "Navigation Icon"
+                contentDescription = "Navigation Icon",
             )
         },
         selected = currentDestination?.hierarchy?.any {
             it.route == screen.route
         } == true,
+        selectedContentColor = LocalContentColor.current,
         unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
         onClick = {
             navController.navigate(screen.route) {

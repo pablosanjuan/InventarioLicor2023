@@ -14,4 +14,5 @@ val White = Color(0xFFFFFFFF)
 
 //DarkColorPalette
 val DarkGrey = Color(0xFF2E2F2F)
-val Grey = Color(0xFF868687)
+val Grey = Color(0xFF444333)
+val Black = Color(0xFF000000)

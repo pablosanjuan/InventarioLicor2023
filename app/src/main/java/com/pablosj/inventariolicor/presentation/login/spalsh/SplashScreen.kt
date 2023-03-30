@@ -4,6 +4,7 @@ import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.FloatTweenSpec
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -51,6 +52,8 @@ fun Splash(alpha: Float) {
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        LottieAnimation(R.raw.lottie_splas_animation, 400.dp, alpha)
+        val lottieSplashAnimation =
+            if (isSystemInDarkTheme()) R.raw.lottie_splash_dark else R.raw.lottie_splash_light
+        LottieAnimation(lottieSplashAnimation, 400.dp, alpha)
     }
 }
