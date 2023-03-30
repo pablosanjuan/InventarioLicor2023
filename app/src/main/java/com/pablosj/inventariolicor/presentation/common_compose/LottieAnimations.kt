@@ -1,4 +1,4 @@
-package com.pablosj.inventariolicor.presentation.splash
+package com.pablosj.inventariolicor.presentation.login
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable

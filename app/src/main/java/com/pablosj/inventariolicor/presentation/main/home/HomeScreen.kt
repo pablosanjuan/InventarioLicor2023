@@ -1,4 +1,4 @@
-package com.pablosj.inventariolicor.presentation
+package com.pablosj.inventariolicor.presentation.main.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -18,7 +18,22 @@ fun HomeScreen() {
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "hola mundo",
+            text = "Home",
+            color = MaterialTheme.colors.onSurface
+        )
+    }
+}
+
+@Composable
+fun SettingsScreen() {
+    Box(
+        modifier = Modifier
+            .background(MaterialTheme.colors.error)
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = "Setttings",
             color = MaterialTheme.colors.onSurface
         )
     }

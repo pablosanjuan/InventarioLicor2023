@@ -1,3 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">InventarioLicor</string>
+    <string name="title_activity_main" tools:ignore="ExtraTranslation">MainActivity</string>
 </resources>

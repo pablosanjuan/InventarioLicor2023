@@ -1,4 +1,4 @@
-package com.pablosj.inventariolicor.presentation.splash
+package com.pablosj.inventariolicor.presentation.login.spalsh
 
 import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.FloatTweenSpec
@@ -6,7 +6,6 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -18,7 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.pablosj.inventariolicor.R
-import com.pablosj.inventariolicor.presentation.navigation.Screen
+import com.pablosj.inventariolicor.presentation.login.LottieAnimation
+import com.pablosj.inventariolicor.presentation.navigationGraphs.Screen
 import kotlinx.coroutines.delay
 
 @Composable
@@ -36,7 +36,7 @@ fun SplashScreen(navController: NavController) {
         startAnimation = true
         delay(4000)
         navController.popBackStack()
-        navController.navigate(Screen.Home.route)
+        navController.navigate(Screen.ToHomeActivity.route)
     }
     Splash(alpha = alphaAnim.value)
 }

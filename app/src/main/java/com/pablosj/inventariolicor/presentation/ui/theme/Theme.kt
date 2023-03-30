@@ -38,7 +38,35 @@ private val DarkColorPalette = lightColors(
 )
 
 @Composable
-fun AnimatedSplashScreenTheme(
+fun SplashScreenTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
+
+    val systemUiController = rememberSystemUiController()
+    SideEffect {
+        systemUiController.setStatusBarColor(
+            color = if (darkTheme) DarkGray else Indigo900,
+            darkIcons = false
+        )
+    }
+
+    val colors = if (darkTheme) {
+        DarkColorPalette
+    } else {
+        LightColorPalette
+    }
+
+    MaterialTheme(
+        colors = colors,
+        typography = Typography,
+        shapes = Shapes,
+        content = content
+    )
+}
+
+@Composable
+fun MainScreenTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
