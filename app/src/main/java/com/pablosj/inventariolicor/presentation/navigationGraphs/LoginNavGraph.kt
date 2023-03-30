@@ -15,18 +15,18 @@ import com.pablosj.inventariolicor.presentation.main.MainActivity
 fun LoginNavGraph(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = Screen.Splash.route
+        startDestination = LoginScreenRoutes.Splash.route
     ) {
-        composable(route = Screen.Splash.route) {
+        composable(route = LoginScreenRoutes.Splash.route) {
             SplashScreen(navController = navController)
         }
-        composable(route = Screen.LogIn.route) {
+        composable(route = LoginScreenRoutes.LogIn.route) {
             //LoginScreen()
         }
-        composable(route = Screen.SignIn.route) {
+        composable(route = LoginScreenRoutes.SignIn.route) {
             //SigninScreen()
         }
-        composable(route = Screen.ToHomeActivity.route) {
+        composable(route = LoginScreenRoutes.ToHomeActivity.route) {
             val context = LocalContext.current
             (context as Activity).apply {
                 startActivity(

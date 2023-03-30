@@ -18,8 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.pablosj.inventariolicor.R
-import com.pablosj.inventariolicor.presentation.login.LottieAnimation
-import com.pablosj.inventariolicor.presentation.navigationGraphs.Screen
+import com.pablosj.inventariolicor.presentation.common_compose.LottieAnimation
+import com.pablosj.inventariolicor.presentation.navigationGraphs.LoginScreenRoutes
 import kotlinx.coroutines.delay
 
 @Composable
@@ -37,7 +37,7 @@ fun SplashScreen(navController: NavController) {
         startAnimation = true
         delay(4000)
         navController.popBackStack()
-        navController.navigate(Screen.ToHomeActivity.route)
+        navController.navigate(LoginScreenRoutes.ToHomeActivity.route)
     }
     Splash(alpha = alphaAnim.value)
 }

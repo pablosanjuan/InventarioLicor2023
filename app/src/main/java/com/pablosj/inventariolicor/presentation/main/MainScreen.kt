@@ -10,6 +10,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.pablosj.inventariolicor.presentation.navigationGraphs.MainScreenRoutes
 import com.pablosj.inventariolicor.presentation.navigationGraphs.MainNavGraph
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -25,8 +26,8 @@ fun MainScreen(navController: NavHostController) {
 @Composable
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
-        BottomBarScreen.Home,
-        BottomBarScreen.Settings,
+        MainScreenRoutes.Home,
+        MainScreenRoutes.Settings,
     )
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
@@ -49,7 +50,7 @@ fun BottomBar(navController: NavHostController) {
 
 @Composable
 fun RowScope.AddItem(
-    screen: BottomBarScreen,
+    screen: MainScreenRoutes,
     currentDestination: NavDestination?,
     navController: NavHostController,
 ) {
