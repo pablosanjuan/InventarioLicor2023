@@ -7,6 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color.Companion.DarkGray
+import com.google.accompanist.systemuicontroller.SystemUiController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val LightColorPalette = darkColors(
@@ -45,10 +46,7 @@ fun SplashScreenTheme(
 
     val systemUiController = rememberSystemUiController()
     SideEffect {
-        systemUiController.setStatusBarColor(
-            color = if (darkTheme) DarkGray else Indigo900,
-            darkIcons = false
-        )
+        systemUiController(systemUiController, darkTheme)
     }
 
     val colors = if (darkTheme) {
@@ -73,10 +71,7 @@ fun MainScreenTheme(
 
     val systemUiController = rememberSystemUiController()
     SideEffect {
-        systemUiController.setStatusBarColor(
-            color = if (darkTheme) DarkGray else Indigo900,
-            darkIcons = false
-        )
+        systemUiController(systemUiController, darkTheme)
     }
 
     val colors = if (darkTheme) {
@@ -90,5 +85,17 @@ fun MainScreenTheme(
         typography = Typography,
         shapes = Shapes,
         content = content
+    )
+}
+
+fun systemUiController(systemUiController: SystemUiController, darkTheme: Boolean) {
+    val color = if (darkTheme) DarkGray else Indigo900
+    systemUiController.setStatusBarColor(
+        color = color,
+        darkIcons = false
+    )
+    systemUiController.setNavigationBarColor(
+        color = color,
+        darkIcons = false
     )
 }
