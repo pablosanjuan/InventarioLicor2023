@@ -23,14 +23,16 @@ fun HomeScreen() {
         modifier = Modifier
             .background(MaterialTheme.colors.surface)
             .fillMaxSize()
-            .padding(12.dp),
     ) {
         //val state = viewModel.state.value
         //state.item?.let { item ->
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colors.secondaryVariant)
+                .padding(12.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = CenterVertically
+            verticalAlignment = CenterVertically,
         ) {
             LottieAnimation(
                 resource = R.raw.lottie_circles_animation,
@@ -39,17 +41,18 @@ fun HomeScreen() {
             )
             Text(
                 text = "Eventos",
-                style = MaterialTheme.typography.h3,
+                style = MaterialTheme.typography.h4,
                 color = MaterialTheme.colors.onSurface,
                 modifier = Modifier.weight(8f)
             )
             ButtonRounded(buttonType = ButtonType.PRIMARY, icon = Icons.Default.Create)
             ButtonRounded(buttonType = ButtonType.SECONDAY, icon = Icons.Default.List)
         }
-        Spacer(modifier = Modifier.height(20.dp))
         LazyColumn(
-            modifier = Modifier.fillMaxWidth(),
-        ) {
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            ) {
             items(getMockedEvents()) { event ->
                 EventItem(
                     event = event,
@@ -84,9 +87,9 @@ fun HomeScreen() {
 
 fun getMockedEvents(): List<Event> {
     return mutableListOf(
-        Event("aaa", "Concierto 1", "3-marzo-2023", "Estadio"),
-        Event("sss", "Concierto 2", "23-febrero-2023", "La macarena"),
-        Event("qqq", "Concierto 3", "5-septiembre-2023", "Estadio"),
+        Event("aaa", "Vilma Palma", "3-marzo-2023", "Estadio", 4),
+        Event("sss", "Reggeton", "23-febrero-2023", "La macarena", 2),
+        Event("qqq", "Alci Acosta", "5-septiembre-2023", "Estadio", 6),
 
-    )
+        )
 }

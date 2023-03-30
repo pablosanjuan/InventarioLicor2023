@@ -71,7 +71,7 @@ fun ButtonRounded(
 @Composable
 fun buttonTypeColor(buttonType: ButtonType): Color {
     return when (buttonType) {
-        ButtonType.PRIMARY -> MaterialTheme.colors.primaryVariant
+        ButtonType.PRIMARY -> MaterialTheme.colors.primary
         ButtonType.SECONDAY -> MaterialTheme.colors.secondary
         ButtonType.DENY -> MaterialTheme.colors.error
     }

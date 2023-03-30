@@ -10,4 +10,5 @@ data class Event(
     @SerializedName("date")
     val date: String, // Founder
     val place: String, // Founder
+    val stores: Int, // Founder
 )
