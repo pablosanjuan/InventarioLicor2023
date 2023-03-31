@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.pablosj.inventariolicor.presentation.main.history.HistoryScreen
 import com.pablosj.inventariolicor.presentation.main.home.HomeScreen
 import com.pablosj.inventariolicor.presentation.main.settings.SettingsScreen
 
@@ -14,10 +15,13 @@ fun MainNavGraph(navController: NavHostController) {
         startDestination = MainScreenRoutes.Home.route
     ) {
         composable(route = MainScreenRoutes.Home.route) {
-            HomeScreen()
+            HomeScreen(navController)
         }
         composable(route = MainScreenRoutes.Settings.route) {
             SettingsScreen()
+        }
+        composable(route = MainScreenRoutes.History.route) {
+            HistoryScreen()
         }
     }
 }

@@ -22,4 +22,10 @@ sealed class MainScreenRoutes(
         icon = Icons.Default.Settings
     )
 
+    object History : MainScreenRoutes(
+        route= "history_screen",
+        title = "Configuracion",
+        icon = Icons.Default.Settings
+    )
+
 }

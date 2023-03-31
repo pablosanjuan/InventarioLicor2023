@@ -26,12 +26,13 @@ fun ButtonRounded(
     textSize: TextUnit = 29.sp,
     buttonType: ButtonType = ButtonType.PRIMARY,
     icon: ImageVector? = null,
+    clickListener: () -> Unit
 ) {
     val interactionSource = remember { MutableInteractionSource() }
     val rippleColor = Color.Red
     Button(
         onClick = {
-
+            clickListener.invoke()
         },
         colors = ButtonDefaults.buttonColors(
             backgroundColor = buttonTypeColor(buttonType),

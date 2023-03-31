@@ -11,4 +11,5 @@ data class Event(
     val date: String, // Founder
     val place: String, // Founder
     val stores: Int, // Founder
+    var isActive: Boolean?, // Founder
 )

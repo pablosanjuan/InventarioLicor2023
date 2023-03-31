@@ -9,6 +9,8 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.ripple.rememberRipple
@@ -115,6 +117,21 @@ fun EventItem(
                 30.dp,
                 1f
             )
+        }
+        event.isActive?.let {
+            Column(
+                modifier = modifier
+                    .weight(2f),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Icon(
+                    modifier = Modifier.size(32.dp),
+                    imageVector = if (it) Icons.Default.Check else Icons.Default.Close,
+                    contentDescription = "Add icon",
+                    tint = if (it) Color.Green else Color.Red,
+                )
+            }
         }
     }
 }

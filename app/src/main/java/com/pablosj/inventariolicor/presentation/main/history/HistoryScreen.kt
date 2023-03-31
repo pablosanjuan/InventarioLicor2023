@@ -1,4 +1,4 @@
-package com.pablosj.inventariolicor.presentation.main.home
+package com.pablosj.inventariolicor.presentation.main.history
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -12,16 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.pablosj.inventariolicor.R
 import com.pablosj.inventariolicor.data.remote.dto.Event
 import com.pablosj.inventariolicor.presentation.common_compose.*
 import com.pablosj.inventariolicor.presentation.main.home.components.EventItem
-import com.pablosj.inventariolicor.presentation.navigationGraphs.MainScreenRoutes
+import com.pablosj.inventariolicor.presentation.main.home.getMockedEvents
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HistoryScreen() {
     Column(
         modifier = Modifier
             .background(MaterialTheme.colors.surface)
@@ -43,30 +41,20 @@ fun HomeScreen(navController: NavHostController) {
                 alpha = 1F
             )
             Text(
-                text = "Eventos",
+                text = "Historial",
                 style = MaterialTheme.typography.h4,
                 color = MaterialTheme.colors.onSurface,
                 modifier = Modifier.weight(8f)
-            )
-            ButtonRounded(
-                buttonType = ButtonType.PRIMARY,
-                icon = Icons.Default.Create,
-                clickListener = { },
-            )
-            ButtonRounded(
-                buttonType = ButtonType.SECONDAY,
-                icon = Icons.Default.List,
-                clickListener = { navController.navigate(MainScreenRoutes.History.route) },
             )
         }
         LazyColumn(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(12.dp),
-        ) {
-            items(getMockedEvents().filter { it.isActive == true }) { event ->
+            ) {
+            items(getMockedEvents()) { event ->
                 EventItem(
-                    event = event.apply { isActive = null },
+                    event = event,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(1.dp)
@@ -94,13 +82,4 @@ fun HomeScreen(navController: NavHostController) {
 //                )
 //            }
     }
-}
-
-fun getMockedEvents(): List<Event> {
-    return mutableListOf(
-        Event("aaa", "Vilma Palma", "3-marzo-2023", "Estadio", 4, false),
-        Event("sss", "Reggeton", "23-febrero-2023", "La macarena", 2, true),
-        Event("qqq", "Alci Acosta", "5-septiembre-2023", "Estadio", 6, false),
-
-        )
 }
